@@ -1,0 +1,423 @@
+*{
+margin: 0;
+padding: 0;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    width: 100%;
+    min-height:100vh ;
+    margin: 0;
+    padding: 0;
+}#header{
+    background-size: cover;
+    background-position: right;
+    height: 80rem;
+    margin: 0 5rem;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    padding: 0 5rem;
+    z-index: 100;
+    background-color: black;
+    top: 0;
+}
+.logo{
+    width: 140px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 2rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s ease-in;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header_text{
+    color: white;
+    margin-top: 10rem;
+    text-transform: capitalize;
+    height: 50%;
+}
+.header_text h1{
+    font-size: 4rem;
+    margin-top: 60px;
+}
+.header_text p{
+    color: red;
+    font-size: 2rem;
+}
+.header_text span{
+    color: red;
+}
+.robot {
+  position: relative;
+  float: right;
+  height: 50%;
+  width: 100%;
+}
+
+.robot .head {
+  position: absolute;
+  left: 105px;
+  animation: headbop 1s infinite alternate; 
+}
+
+.robot .body { 
+  position: absolute;
+  z-index: 1;
+  top: 128px;
+  left: 80px;
+}
+
+.robot .larm {
+  animation: wave-larm 1s infinite alternate; 
+  position: absolute;
+  z-index: 100;
+  transform-origin: 80% 10%;
+  top: 132px;
+  left: 50px; 
+}
+
+.robot .rarm {
+  animation: wave-rarm 1s infinite alternate; 
+  position: absolute;
+  z-index: 100;
+  transform-origin: 20% 10%; 
+  top: 132px;
+  left: 240px;
+}
+
+.robot .lfoot {
+  animation: stomp-lfoot 0.5s infinite alternate;
+  position: absolute;
+  top: 270px;
+  left: 110px;
+}
+
+.robot .rfoot {
+  animation: stomp-rfoot 0.5s infinite alternate;
+  position: absolute;
+  top: 270px;
+  left: 182px;
+}
+.message{
+  font-size: 3rem;
+  color: white;
+  margin: 0 17rem ;
+  text-transform: capitalize;
+}
+/* The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence. */
+  
+@keyframes headbop {
+  /* The transform CSS property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated, scaled and skewed.*/
+  0% {transform: translateY(-10px);}
+  50% {transform: rotate(5deg);}
+  100% {transform: translateY(10px);}
+}
+
+@keyframes wave-rarm {
+  0% {transform: rotate(-180deg);}
+  100% {transform: rotate(90deg);}
+}
+
+@keyframes wave-larm {
+  0% {transform: rotate(180deg);}
+  100% {transform: rotate(-45deg);}
+}
+
+@keyframes walk {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(-100px);}
+  66% {transform: translateY(-35px);}
+  100% {transform: translate(0)}
+}
+
+@keyframes stomp-rfoot {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-6px);}
+}
+
+@keyframes stomp-lfoot {
+  0% {transform: translateY(-6px);}
+  100% {transform: translateY(0px);}
+}
+/* .about */
+#about{
+    height: 80rem;
+    width: 100%;
+    padding: 0 5rem;
+    text-transform: capitalize;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+.about-col-1 img{
+  width: 65%;
+  height: 60%;
+  padding-left: 5rem;
+    border-radius: 15px;
+}
+.about-col-1{
+    width: 35%;
+    height: 100%;
+}
+.about-col-2{
+  width: 60%;
+  height: 100%;
+}
+.subtitle{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    margin-top: 5rem;
+    text-transform: capitalize;
+}
+.about-col-2 p{
+    color: #ababab;
+    margin-top: 50px;
+    font-size: 20px;
+}
+.tab-titles{
+    display: flex;
+    margin: 50px 0 40px ;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position:absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s ease-in;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    color: white;
+    font-size: 40px;
+}
+.tab-contents ul li span{
+    color: rgb(233, 52, 52);
+    font-size: 30px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/* services */
+#services{
+  width: 100%;
+  height: 80rem;
+    color: white;
+}
+.services-list{
+    display: grid;
+ 
+    column-gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+.subtitle2{
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  padding: 5rem;
+  margin-top: 5rem;
+  text-transform: capitalize;
+}
+.services-list div{
+  padding: 3rem 3rem;
+  margin: 0 2rem;
+    background: #262626;
+    border-radius: 15px;
+    transition: 0.5s ease-in;
+}
+.services-list div i{
+    font-size: 2rem;
+}
+.services-list div h2{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+.services-list div p{
+    font-size: 1rem;
+    margin: 2rem 0;
+}
+.more{
+    color: red;
+}
+.services-list div:hover{
+background-color: #E85D04;
+transform: translateY(-15px);
+color: white;
+}
+.services-list div:hover > .more{
+color: white;
+text-decoration: none;
+}
+#mywork{
+  width: 100%;
+  height: 90rem;
+}
+.work-list{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+.work{
+  margin: 5rem 5rem;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    color:white;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.layer a{
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: white;
+    margin-top: 50px;
+    line-height: 60px;
+    width: 60px;
+    color: #333;
+    height: 60px;
+    border-radius: 50%;
+}
+.work:hover .layer{
+    height: 100%;
+
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.btn{
+    display: block;
+    margin: 5rem auto 0 auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: black;
+    border-radius: 6px;
+    background-color: white;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+.btn:hover{
+    color: white;
+    background: #ff004f;
+}
+#contact{
+  width: 100%;
+  height: 90rem;
+    color: white;
+}
+
+.box{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 5rem;
+  height: 30rem;
+  align-content: center;
+  text-align: center;
+}
+.subtitle3{
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  margin-top: 5rem;
+  text-transform: capitalize;
+}
+.info{
+  margin: 5rem 0;
+  color: red;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.details {
+  margin: 5rem 0;
+  font-size: 1rem;
+  font-weight: 200;
+  margin: 2rem 0 0 0;
+}
+.box i{
+  margin: 5rem 0;
+  font-size: 3rem;
+
+}
